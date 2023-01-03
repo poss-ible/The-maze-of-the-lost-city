@@ -35,7 +35,7 @@ int main()
 	p1=x;
 	p2=y;
 	q.push(p);
-	int road_long=0,road_short=0,turns=0;
+	int turns=0;
 	while(!q.empty())
 	{
 		++turns;
@@ -46,15 +46,8 @@ int main()
 			{
 				if((q1==c)&&(q2==d))
 				{
-					cout<<turns<<' ';
-					if(road_short)
-					{
-						road_long=turns;
-					}
-					else
-					{
-						road_short=turns;
-					}
+					cout<<"short:"<<turns;
+					return 0;
 				}
 				p1=q1+1;
 				p2=q2;
@@ -72,17 +65,6 @@ int main()
 		}
 		q=t;
 	}
-	if(road_short)
-	{
-		cout<<"short:"<<road_short;
-		if(road_long)
-		{
-			cout<<"\nlong:"<<road_long;
-		}
-	}
-	else
-	{
-		cout<<"no answer";
-	}
+	cout<<"no answer";
 	return 0;
 }
