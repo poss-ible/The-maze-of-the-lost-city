@@ -1,4 +1,4 @@
-#inlcude <bits/stdc++.h>
+#include <bits/stdc++.h>
 #define Tab_Top_Left 1
 #define Tab_Top_Right 2
 #define Tab_Bottom_Left 3
@@ -51,4 +51,5 @@ int main()
 	chushihua();
 	int a[19][29]={},x=0,y=0;
 	makemaze(a,x,y,x,y);
+	
 }
