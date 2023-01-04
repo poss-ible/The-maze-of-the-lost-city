@@ -17,7 +17,7 @@ void chushihua()
 }
 void makemaze(int *a[][29],int qx,int qy,int xx,int xy)
 {
-	if(!(*a[xx+1][xy]+*a[xx-1][xy]+*a[xx][xy+1]+*a[xx][xy-1]))
+	if(*a[xx+1][xy]+*a[xx-1][xy]+*a[xx][xy+1]+*a[xx][xy-1])
 	{
 		*a[xx][xy]=1;
 		*a[qx][xy]=1;
@@ -41,6 +41,7 @@ void makemaze(int *a[][29],int qx,int qy,int xx,int xy)
 						break;
 					case 3:
 						makemaze(a,xx,xy-1,xx,xy-2);
+						break;
 				}
 			}
 		}
