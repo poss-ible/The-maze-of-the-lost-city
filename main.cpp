@@ -15,7 +15,7 @@ void chushihua()
 {
 	srand((unsigned)time(NULL));
 }
-void makemaze(int *a[][],qx,qy,xx,xy)
+void makemaze(int *a[19][29],int qx,int qy,int xx,int xy)
 {
 	if(!(*a[xx+1][xy]+*a[xx-1][xy]+*a[xx][xy+1]+*a[xx][xy-1]))
 	{
