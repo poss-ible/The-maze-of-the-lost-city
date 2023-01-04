@@ -53,5 +53,13 @@ int main()
 	chushihua();
 	int a[19][29]={},x=0,y=0;
 	makemaze((int* (*)[29])a,x,y,x,y);
+	for(int i=0;i<19;++i)
+	{
+		for(int j=0;j<29;++j)
+		{
+			cout<<a[i][j];
+		}
+		cout<<endl;
+	}
 	return 0;
 }
