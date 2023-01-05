@@ -89,14 +89,15 @@ int main()
 					}
 					else
 					{
-						if(a[j-1][i]+a[j+1][i])
+						/*if(a[j-1][i]+a[j+1][i])
 						{
 							cout<<"| ";
 						}
 						else
 						{
 							cout<<"——";
-						}
+						}*/
+						cout<<"■■";
 					}
 				}
 			}
