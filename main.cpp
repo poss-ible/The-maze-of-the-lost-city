@@ -113,6 +113,11 @@ void gotoxy(int x,int y)
 	pos.Y = y;
 	SetConsoleCursorPosition(handle,pos);
 }
+void xyc(int x,int y)
+{
+	gotoxy(x,y);
+	cout<<"•";
+}
 int main()
 {
 	chushihua();
@@ -124,13 +129,13 @@ int main()
 		{
 			if(i==y&&j==x)
 			{
-				cout<<"s";
+				cout<<"S";
 			}
 			else
 			{
 				if(i==ey&&j==ex)
 				{
-					cout<<"z";
+					cout<<"E";
 				}
 				else
 				{
@@ -140,21 +145,98 @@ int main()
 					}
 					else
 					{
-						/*if(a[j-1][i]+a[j+1][i])
+						if(a[j-1][i]+a[j+1][i]+a[j][i+1]+a[j][i-1]==0)
 						{
-							cout<<"| ";
+							cout<<"┼";
 						}
 						else
 						{
-							cout<<"——";
-						}*/
-						cout<<"■";
+							if(a[j][i+1]+a[j][i-1]+a[j+1][i]==0)
+							{
+								cout<<"├";
+							}
+							else
+							{
+								if(a[j][i+1]+a[j][i-1]+a[j-1][i]==0)
+								{
+									cout<<"┤";
+								}
+								else
+								{
+									if(a[j+1][i]+a[j-1][i]+a[j][i+1]==0)
+									{
+										cout<<"┬";
+									}
+									else
+									{
+										if(a[j+1][i]+a[j-1][i]+a[j][i-1]==0)
+										{
+											cout<<"┴";
+										}
+										else
+										{
+											if(a[j+1][i]+a[j-1][i]==0)
+											{
+												cout<<"─";
+											}
+											else
+											{
+												if(a[j][i+1]+a[j][i-1]==0)
+												{
+													cout<<"|";
+												}
+												else
+												{
+													if(a[j][i+1]+a[j+1][i]==0)
+													{
+														cout<<"┌";
+													}
+													else
+													{
+														if(a[j][i-1]+a[j+1][i]==0)
+														{
+															cout<<"└";
+														}
+														else
+														{
+															if(a[j][i+1]+a[j-1][i]==0)
+															{
+																cout<<"┐";
+															}
+															else
+															{
+																if(a[j][i-1]+a[j-1][i]==0)
+																{
+																	cout<<"┘";
+																}
+																else
+																{
+																	if(a[j][i+1]==0||a[j][i-1]==0)
+																	{
+																		cout<<"|";
+																	}
+																	else
+																	{
+																		cout<<"─";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
 		}
 		cout<<'\n';
 	}
+	xyc(0,0);
 	while(x!=ex||y!=ey)
 	{
 		#define cany(y) (y>=0&&y<19&&a[x][y]!=0)
@@ -167,8 +249,7 @@ int main()
 				--x;
 				if(canx(x))
 				{
-					gotoxy(x,y);
-					cout<<"•";
+					xyc(x,y);
 				}
 				else
 				{
@@ -181,8 +262,7 @@ int main()
 				++x;
 				if(canx(x))
 				{
-					gotoxy(x,y);
-					cout<<"•";
+					xyc(x,y);
 				}
 				else
 				{
@@ -195,8 +275,7 @@ int main()
 				--y;
 				if(cany(y))
 				{
-					gotoxy(x,y);
-					cout<<"•";
+					xyc(x,y);
 				}
 				else
 				{
@@ -209,8 +288,7 @@ int main()
 				++y;
 				if(cany(y))
 				{
-					gotoxy(x,y);
-					cout<<"•";
+					xyc(x,y);
 				}
 				else
 				{
