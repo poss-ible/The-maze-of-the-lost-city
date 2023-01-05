@@ -35,7 +35,7 @@ HEISHIRO與POSS_IBLE作品
 (Kai)不，等等！你看！這裏有一個迷宮！<br>
 (Jemo)好好好，我們回去……等等，你說什麽？<br><br>
 
-### 迷宮中的書 (短情節I) - 當「Sophies_world.pdf」在The-maze-of-the-lost-mity\files裏時
+### 迷宮中的書 (短情節I) - 當「Sophies_world.pdf」在The-maze-of-the-lost-mity\files\P-T裏時
 (Kai)嘿，看！一個講義夾！<br>
 (Jemo)不！這是一本書！《蘇菲的世界》…為什麽「蘇菲」和「的」之間沒有引號？<br>
 (Kai)給我！「蘇菲放學回家了。有一段路她和喬安同行，她們談著有關機器人的問題。喬安認為人的腦子就像一部很先進的電腦，這點蘇菲並不太贊同。她想：人應該不只是一臺機器吧？」嗯，看起來一本好書。<br>
@@ -75,10 +75,10 @@ HEISHIRO與POSS_IBLE作品
 
 *向左走後*<br><br>
 
-(Poñavi) 看！我們需要輸入一個五位的密碼！
+(Poñavi) 看！我們需要輸入一個五位的密碼！<br><br>
 
-`if (password == "BLESS")`，就去查看 **"### 如果輸入了正確的密碼"**
-`else`，就去查看 **"### 如果輸入了錯誤的密碼"**
+`if (password == "BLESS")`，就去查看 **"### 如果輸入了正確的密碼"**<br>
+`else`，就去查看 **"### 如果輸入了錯誤的密碼"**<br><br>
 
 
 (Kai) 看！出口！出口那邊又有新的迷宮了！<br>
