@@ -15,6 +15,8 @@ map<int,map<int,bool>> a;
 int ex,ey;
 void chushihua()
 {
+	system ("chcp 65001");
+	system ("cls");
 	srand((unsigned)time(NULL));
 }
 void makemaze(int qx,int qy,int xx,int xy)
@@ -63,7 +65,21 @@ int main()
 	{
 		for(int j=0;j<29;++j)
 		{
-			cout<<a[j][i];
+			if(i==y&&j==x)
+			{
+				cout<<"始";
+			}
+			else
+			{
+				if(i==ey&&j==ex)
+				{
+					cout<<"终";
+				}
+				else
+				{
+					cout<<a[j][i]<<' ';
+				}
+			}
 		}
 		cout<<'\n';
 	}
