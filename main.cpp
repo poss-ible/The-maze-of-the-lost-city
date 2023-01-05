@@ -115,17 +115,24 @@ void gotoxy(int x,int y)
 }
 void xyc(int x,int y)
 {
-	gotoxy(x,y);
+	gotoxy(x+1,y+1);
 	cout<<"•";
 }
-int main()
+void print_maze(int x,int y)
 {
-	chushihua();
-	int x=0,y=0;
-	makemaze(x,y,x,y,0);
-	for(int i=0;i<19;++i)
+	for(int i=-2;i<=20;++i)
 	{
-		for(int j=0;j<29;++j)
+		a[-2][i]=1;
+		a[30][i]=1;
+	}
+	for(int i=-2;i<=30;++i)
+	{
+		a[i][-2]=1;
+		a[i][20]=1;
+	}
+	for(int i=-1;i<=19;++i)
+	{
+		for(int j=-1;j<=29;++j)
 		{
 			if(i==y&&j==x)
 			{
@@ -236,6 +243,9 @@ int main()
 		}
 		cout<<'\n';
 	}
+}
+void move(int x,int y)
+{
 	xyc(0,0);
 	while(x!=ex||y!=ey)
 	{
@@ -298,6 +308,14 @@ int main()
 			}
 		}
 	}
+	gotoxy(0,21);
+}
+int main()
+{
+	chushihua();
+	makemaze(0,0,0,0,0);
+	print_maze(0,0);
+	move(0,0);
 	cout<<"you win";
 	return 0;
 }
