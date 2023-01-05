@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) & 0x8000) ? 1:0)
 #define Tab_Top_Left 1
 #define Tab_Top_Right 2
 #define Tab_Bottom_Left 3
@@ -12,21 +13,26 @@
 using namespace std;
 
 map<int,map<int,bool>> a;
-int ex,ey;
+int ex,ey,maxn=0;
 void chushihua()
 {
 	system ("chcp 65001");
 	system ("cls");
 	srand((unsigned)time(NULL));
 }
-void makemaze(int qx,int qy,int xx,int xy)
+void makemaze(int qx,int qy,int xx,int xy,int maxm)
 {
 	if(!(xx<0||xx>=29||xy<0||xy>=19))
 	{
 		if((a[xx+1][xy]+a[xx-1][xy]+a[xx][xy+1]+a[xx][xy-1])==0)
 		{
-			ex=xx;
-			ey=xy;
+			++maxm;
+			if(maxm>maxn)
+			{
+				ex=xx;
+				ey=xy;
+				maxn=maxm;
+			}
 			a[xx][xy]=1;
 			a[qx][qy]=1;
 			map<int,int> b;
@@ -39,16 +45,16 @@ void makemaze(int qx,int qy,int xx,int xy)
 					switch(s)
 					{
 						case 0:
-							makemaze(xx+1,xy,xx+2,xy);
+							makemaze(xx+1,xy,xx+2,xy,maxm);
 							break;
 						case 1:
-							makemaze(xx-1,xy,xx-2,xy);
+							makemaze(xx-1,xy,xx-2,xy,maxm);
 							break;
 						case 2:
-							makemaze(xx,xy+1,xx,xy+2);
+							makemaze(xx,xy+1,xx,xy+2,maxm);
 							break;
 						case 3:
-							makemaze(xx,xy-1,xx,xy-2);
+							makemaze(xx,xy-1,xx,xy-2,maxm);
 							break;
 					}
 				}
@@ -60,7 +66,7 @@ int main()
 {
 	chushihua();
 	int x=0,y=0;
-	makemaze(x,y,x,y);
+	makemaze(x,y,x,y,0);
 	for(int i=0;i<19;++i)
 	{
 		for(int j=0;j<29;++j)
@@ -77,12 +83,25 @@ int main()
 				}
 				else
 				{
-					cout<<a[j][i]<<' ';
+					if(a[j][i])
+					{
+						cout<<"  ";
+					}
+					else
+					{
+						if(a[j-1][i]+a[j+1][i])
+						{
+							cout<<"| ";
+						}
+						else
+						{
+							cout<<"——";
+						}
+					}
 				}
 			}
 		}
 		cout<<'\n';
 	}
-	cout<<ex<<' '<<ey;
 	return 0;
 }
