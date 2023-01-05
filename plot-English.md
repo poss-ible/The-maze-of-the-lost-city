@@ -20,11 +20,11 @@ BY HEISHIRO and POSS_IBLE
 (Kai) Hey, where's Mity?<br>
 (Jemo) Dunno. Mity? Mity! That's strange. Er, maybe she is still at school?<br>
 (Kai) No! She has no lessons today! She should at home now! My sister, she...<br>
-(Jemo) Hey - hey! It's okay, we can find her. Here, your kitty.<br>
+(Jemo) Hey - hey! It's oKai, we can find her. Here, your kitty.<br>
 (Poñavi) M- Meow? (What?)<br>
 (Kai) Oh! Mi Poñavi! Come here and hug your papá- Mmm...<br>
-(Poñavi) Meow... (Well okay...)<br>
-(Jemo) Hey, let's take a walk with Poñavi okay?<br>
+(Poñavi) Meow... (Well oKai...)<br>
+(Jemo) Hey, let's take a walk with Poñavi oKai?<br>
 (Kai) Good idea! Maybe we can find Mity out there!<br><br>
 
 *Out there...*<br>
@@ -33,7 +33,7 @@ BY HEISHIRO and POSS_IBLE
 (Kai) It's dark!<br>
 (Jemo) Let's go back?<br>
 (Kai) No, wait! Look! It is a maze!<br>
-(Jemo) Okay, don't... Wait, what?<br><br>
+(Jemo) OKai, don't... Wait, what?<br><br>
 
 ### Book in the maze (Short Plot I) - When "Sophies_world.pdf" is in the The-maze-of-the-lost-mity\files
 (Kai) What? Look! A lecture portfolio!<br>
@@ -83,7 +83,7 @@ BY HEISHIRO and POSS_IBLE
 
 (Kai) Look! The exit! It becomes another maze!<br>
 (Jemo) What the- huh? B- But when?<br>
-(Kai) Okay, let's go!<br><br>
+(Kai) OKai, let's go!<br><br>
 
 **After completing the maze**<br>
 ## Chapter Three **TRUTH**
@@ -110,7 +110,7 @@ BY HEISHIRO and POSS_IBLE
 `return 0`
 
 ## if enter the right password
-(Tío) Okay, let's go, player, remember to-
+(Tío) OKai, let's go, player, remember to-
 `\\before closing the game, should change a variable. Next time we open this game, if this variable changes, and there is nothing in the The-maze-of-the-lost-mity\files\A-E, should display nothing but a line of sentence:"THANKS"; But if not, than display nothing.`<br><br>
 
 `return 0`
