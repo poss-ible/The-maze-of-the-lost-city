@@ -183,7 +183,7 @@ int main()
 											{
 												if(a[j][i+1]+a[j][i-1]==0)
 												{
-													cout<<"|";
+													cout<<"│";
 												}
 												else
 												{
@@ -213,7 +213,7 @@ int main()
 																{
 																	if(a[j][i+1]==0||a[j][i-1]==0)
 																	{
-																		cout<<"|";
+																		cout<<"│";
 																	}
 																	else
 																	{
