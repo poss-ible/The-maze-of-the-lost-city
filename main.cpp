@@ -11,16 +11,17 @@
 #define End 10
 using namespace std;
 
+int a[19][29];
 void chushihua()
 {
 	srand((unsigned)time(NULL));
 }
-void makemaze(int *a[][29],int qx,int qy,int xx,int xy)
+void makemaze(int qx,int qy,int xx,int xy)
 {
-	if(*a[xx+1][xy]+*a[xx-1][xy]+*a[xx][xy+1]+*a[xx][xy-1])
+	if((a[xx+1][xy]+a[xx-1][xy]+a[xx][xy+1]+a[xx][xy-1])==0)
 	{
-		*a[xx][xy]=1;
-		*a[qx][xy]=1;
+		a[xx][xy]=1;
+		a[qx][xy]=1;
 		map<int,int> b;
 		while(b.size()!=4)
 		{
@@ -31,28 +32,27 @@ void makemaze(int *a[][29],int qx,int qy,int xx,int xy)
 				switch(s)
 				{
 					case 0:
-						makemaze(a,xx+1,xy,xx+2,xy);
+						makemaze(xx+1,xy,xx+2,xy);
 						break;
 					case 1:
-						makemaze(a,xx-1,xy,xx-2,xy);
+						makemaze(xx-1,xy,xx-2,xy);
 						break;
 					case 2:
-						makemaze(a,xx,xy+1,xx,xy+2);
+						makemaze(xx,xy+1,xx,xy+2);
 						break;
 					case 3:
-						makemaze(a,xx,xy-1,xx,xy-2);
+						makemaze(xx,xy-1,xx,xy-2);
 						break;
 				}
 			}
 		}
 	}
-	return;
 }
 int main()
 {
 	chushihua();
-	int a[19][29]={},x=0,y=0;
-	makemaze((int* (*)[29])a,x,y,x,y);
+	int x=0,y=0;
+	makemaze(x,y,x,y);
 	for(int i=0;i<19;++i)
 	{
 		for(int j=0;j<29;++j)
