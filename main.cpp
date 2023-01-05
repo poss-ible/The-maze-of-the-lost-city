@@ -18,44 +18,10 @@ using namespace std;
 
 map<int,map<int,bool>> a;
 int ex,ey,maxn=0;
-void Main_Screen ()
-{
-	printf("┌──────────────────────────────────────────────────────────┐\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("└──────────────────────────────────────────────────────────┘\n");
-	printf("\n");
-	printf("┌──────────────────────────────────────────────────────────┐\n");
-	printf("│                                                          │\n");
-	printf("├──────────────────────────────────────────────────────────┤\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("│                                                          │\n");
-	printf("└──────────────────────────────────────────────────────────┘\n");
-}
 void chushihua()
 {
 	system ("chcp 65001");
 	system ("cls");
-	//Main_Sqeen();
 	srand((unsigned)time(NULL));
 	HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
 	DWORD mode;
