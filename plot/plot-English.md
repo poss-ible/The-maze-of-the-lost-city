@@ -35,7 +35,7 @@ BY HEISHIRO and POSS_IBLE
 (Kai) No, wait! Look! It is a maze!<br>
 (Jemo) okay, don't... Wait, what?<br><br>
 
-### Book in the maze (Short Plot I) - When "Sophies_world.pdf" is in the The-maze-of-the-lost-mity\files
+### Book in the maze (Short Plot I) - When "Sophies_world.pdf" is in the The-maze-of-the-lost-mity\files\P-T
 (Kai) What? Look! A lecture portfolio!<br>
 (Jemo) No! It is a book! "Sophies world"... Why there is no quotation mark between "Sophie" and "s"?<br>
 (Kai) Gimme that! "Sophie Amundsen was on her way home from school. She had walked the first part of the way with Joanna. They had been discussing robots. Joanna thought the human brain was like an advanced computer. Sophie was not certain she agreed. Surely a person was more than a piece of hardware?" Well, that is a good book.<br>
@@ -75,10 +75,10 @@ BY HEISHIRO and POSS_IBLE
 
 *After going left*<br><br>
 
-(Poñavi) Look! We need to enter a five digit password! It says "Turn off ACL"...
+(Poñavi) Look! We need to enter a five digit password! It says "Turn off ACL"...<br><br>
 
-`if (password == "BLESS")`, then go to **"### if enter the right password"**
-`else`, go to **"### if enter the wrong password"**
+`if (password == "BLESS")`, then go to **"### if enter the right password"**<br>
+`else`, go to **"### if enter the wrong password"**<br><br>
 
 
 (Kai) Look! The exit! It becomes another maze!<br>
