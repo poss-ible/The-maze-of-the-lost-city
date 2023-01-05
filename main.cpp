@@ -20,6 +20,17 @@ map<int,map<int,bool>> a;
 int ex,ey,maxn=0;
 void chushihua()
 {
+	HANDLE HOUT = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD NewSize = GetLargestConsoleWindowSize(HOUT);
+    NewSize.X -= 1;
+    NewSize.Y -= 1;
+    SetConsoleScreenBufferSize(HOUT, NewSize);
+    SMALL_RECT DisplayArea={0,0,0,0};
+    DisplayArea.Right = NewSize.X;
+    DisplayArea.Bottom = NewSize.Y;
+    SetConsoleWindowInfo(HOUT, TRUE, &DisplayArea);
+    HWND hwnd = GetConsoleWindow();
+    ShowWindow(hwnd, SW_MAXIMIZE);
 	system ("chcp 65001");
 	system ("cls");
 	srand((unsigned)time(NULL));
