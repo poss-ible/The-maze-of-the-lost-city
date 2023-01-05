@@ -75,12 +75,11 @@ BY HEISHIRO and POSS_IBLE
 
 *After going left*<br><br>
 
-(Poñavi) Look! A stele! There are some strange scotch here!<br>
-(Kai) Hey! I am not strange!<br>
-(Poñavi) No! I said that is strange!<br>
-(Jemo) Interesting. We should write them down.<br><br>
+(Poñavi) Look! We need to enter a five digit password! It says "Turn off ACL"...
 
-*⺕⺒⺒⺕⺔⺕⺒⺕⺕⺔⺕⺒⺔⺒⺕⺒⺒⺔⺕⺔⺕⺒⺕⺔⺒⺒⺕⺕⺒⺒⺔⺒⺕⺕⺕⺕⺒⺔⺕⺕⺔⺒⺕⺕⺕⺕⺒⺔⺒⺕⺒⺕⺔⺕⺒⺔⺒⺕⺔⺒⺕⺕⺕⺕⺒⺔⺕⺕⺕⺔⺕⺔⺕⺔⺒⺕⺕⺕⺕⺒⺔⺒⺕⺒⺒⺔⺒⺒⺒⺔⺕⺕⺒*<br><br>
+`if (password == "BLESS")`, then go to **"### if enter the right password"**
+`else`, go to **"### if enter the wrong password"**
+
 
 (Kai) Look! The exit! It becomes another maze!<br>
 (Jemo) What the- huh? B- But when?<br>
@@ -100,11 +99,18 @@ BY HEISHIRO and POSS_IBLE
 (Tío) So maybe what we said is only some brain wave in another person. Like, that guy made your kitty talk-<br>
 (Poñavi) Hi!<br>
 (Tío) Yeah, it is just a little trick. So we will disappear just like Sophie. Now hold on to me. Hi player, which is the person playing this game, goodbye. Now, I want you to delete all files in the The-maze-of-the-lost-mity\files\A-E... Then we will escape!<br>
+
+### if enter the wrong password
 *(Admin) Sorry but you can't!*<br>
 (Tío) What?<br>
-*(Admin) Sorry... Player, don't delete that, they want to utilize you*<br>
-(Tío) Okay... But I have more than that. Player, you'll do what you need to, than I will-<br><br>
+*(Admin) Sorry... Player, don't delete that, now I will close this s------*
 
+`\\delete everything before turning off the game.`
+
+`return 0`
+
+## if enter the right password
+(Tío) Okay, let's go, player, remember to-
 `\\before closing the game, should change a variable. Next time we open this game, if this variable changes, and there is nothing in the The-maze-of-the-lost-mity\files\A-E, should display nothing but a line of sentence:"THANKS"; But if not, than display nothing.`<br><br>
 
 `return 0`
