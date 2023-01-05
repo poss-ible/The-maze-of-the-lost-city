@@ -11,14 +11,14 @@
 #define End 10
 using namespace std;
 
-int a[19][29];
+int a[21][31],ex,ey;
 void chushihua()
 {
 	srand((unsigned)time(NULL));
 }
 void makemaze(int qx,int qy,int xx,int xy)
 {
-	if((a[xx+1][xy]+a[xx-1][xy]+a[xx][xy+1]+a[xx][xy-1])==0)
+	if((a[xx+1][xy]+a[xx-1][xy]+a[xx][xy+1]+a[xx][xy-1])==0||(ex==xx&&ey==xy))
 	{
 		a[xx][xy]=1;
 		a[qx][xy]=1;
@@ -51,11 +51,23 @@ void makemaze(int qx,int qy,int xx,int xy)
 int main()
 {
 	chushihua();
-	int x=0,y=0;
-	makemaze(x,y,x,y);
-	for(int i=0;i<19;++i)
+	int x=1,y=1;
+	ex=x;
+	ey=y;
+	for(int i=0;i<21;++i)
 	{
-		for(int j=0;j<29;++j)
+		a[i][0]=1;
+		a[i][20]=1;
+	}
+	for(int j=0;j<31;++j)
+	{
+		a[0][j]=1;
+		a[30][j]=1;
+	}
+	makemaze(x,y,x,y);
+	for(int i=1;i<=19;++i)
+	{
+		for(int j=1;j<=29;++j)
 		{
 			cout<<a[i][j];
 		}
