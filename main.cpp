@@ -18,8 +18,21 @@ using namespace std;
 
 map<int,map<int,bool>> a;
 int ex,ey,maxn=0;
+const int X=59,Y=19;
+void SetFont(int size = 20) {
+	CONSOLE_FONT_INFOEX cfi;
+	cfi.cbSize = sizeof cfi;
+	cfi.nFont = 0;
+	cfi.dwFontSize.X = 0;
+	cfi.dwFontSize.Y = size;
+	cfi.FontFamily = FF_DONTCARE;
+	cfi.FontWeight = FW_NORMAL;
+	wcscpy_s(cfi.FaceName, L"等线light");
+	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+}
 void chushihua()
 {
+	SetFont();
 	HANDLE HOUT = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD NewSize = GetLargestConsoleWindowSize(HOUT);
     NewSize.X -= 1;
@@ -42,7 +55,7 @@ void chushihua()
 }
 void makemaze(int qx,int qy,int xx,int xy,int maxm)
 {
-	if(!(xx<0||xx>=29||xy<0||xy>=19))
+	if(!(xx<0||xx>=X||xy<0||xy>=Y))
 	{
 		if((a[xx+1][xy]+a[xx-1][xy]+a[xx][xy+1]+a[xx][xy-1])==0)
 		{
@@ -93,23 +106,23 @@ void gotoxy(int x,int y)
 void xyc(int x,int y)
 {
 	gotoxy(x+1,y+1);
-	cout<<"•";
+	cout<<"*";
 }
 void print_maze(int x,int y)
 {
-	for(int i=-2;i<=20;++i)
+	for(int i=-2;i<=Y+1;++i)
 	{
 		a[-2][i]=1;
-		a[30][i]=1;
+		a[X+1][i]=1;
 	}
-	for(int i=-2;i<=30;++i)
+	for(int i=-2;i<=X+1;++i)
 	{
 		a[i][-2]=1;
-		a[i][20]=1;
+		a[i][Y+1]=1;
 	}
-	for(int i=-1;i<=19;++i)
+	for(int i=-1;i<=Y;++i)
 	{
-		for(int j=-1;j<=29;++j)
+		for(int j=-1;j<=X;++j)
 		{
 			if(i==y&&j==x)
 			{
@@ -226,8 +239,8 @@ void move(int x,int y)
 	xyc(0,0);
 	while(x!=ex||y!=ey)
 	{
-		#define cany(y) (y>=0&&y<19&&a[x][y]!=0)
-		#define canx(x) (x>=0&&x<29&&a[x][y]!=0)
+		#define canx(x) (x>=0&&x<X&&a[x][y]!=0)
+		#define cany(y) (y>=0&&y<Y&&a[x][y]!=0)
 		char c=getch();
 		if(c<='Z')
 		{
