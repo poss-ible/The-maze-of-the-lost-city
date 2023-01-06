@@ -12,7 +12,7 @@ void plot (int lan, int part)
 		if (part == 1)
 		{
 			printf ("Chapter One: ACROSS");
-			//clear;
+			//clear ();
 			printf ("(Kai) Well, school life sucks. But I am excited about the Thanksgiving Day.");
 			printf ("(Jemo) What? You have no lessons at Thanksgiving?");
 			printf ("(Kai) Yeah. But we still have to have Spanish lessons.");
@@ -79,6 +79,43 @@ void plot (int lan, int part)
 			printf ("(Poñavi) Look! We need to enter a five digit password! It says \"Turn off ACL\"...");
 		}
 		
+		if (part == 5)
+		{
+			printf ("(Kai) Look! The exit! It becomes another maze!");
+			printf ("(Jemo) What the- huh? B- But when?");
+			printf ("(Kai) okay, let's go!");
+		}
 		
+		if (part == 6)
+		{
+			printf ("(Kai) Look! It's Mity! Why she's here?");
+			printf ("(Mity) Hey! Boys! Come here! Me and Tío found out what is happening!");
+			printf ("(Jemo) Wha-");
+			printf ("(Tío) Hi children, I am Tío. Mity and I found out that we actually are in a game.");
+			printf ("(Jemo) Wait, are you kidding?");
+			printf ("(Tío) No, I am serious. This world is actually a unreal world, which is made by a guy called Pos Ibel.");
+			printf ("(Kai) Yes! That card!");
+			printf ("(Tío) Did you guys read \"Sophie's world\" before?");
+			printf ("(Jemo) Well, not really, but-");
+			printf ("(Tío) So maybe what we said is only some brain wave in another person. Like, that guy made your kitty talk-");
+			printf ("(Poñavi) Hi!");
+			printf ("(Tío) Yeah, it is just a little trick. So we will disappear just like Sophie. Now hold on to me. Hi player, which is the person playing this game, goodbye. Now, I want you to delete all files in the The-maze-of-the-lost-mity\\files\\A-E... Then we will escape!");
+		}
+		
+		if (part == 61)
+		{
+			printf ("(Admin) Sorry but you can't!");
+			printf ("(Tío) What?");
+			printf ("(Admin) Sorry... Player, don't delete that, now I will close this s------");
+			
+			//delete everything before turning off the game.
+		}
+		
+		if (part == 62)
+		{
+			printf ("(Tío) okay, let's go, player, remember to------");
+			
+			//before closing the game, should change a variable. Next time we open this game, if this variable changes, and there is nothing in the The-maze-of-the-lost-mity\files\A-E, should display nothing but a line of sentence:"THANKS"; But if not, than display nothing.
+		}
 	}
 }
