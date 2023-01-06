@@ -229,6 +229,11 @@ void move(int x,int y)
 		#define cany(y) (y>=0&&y<19&&a[x][y]!=0)
 		#define canx(x) (x>=0&&x<29&&a[x][y]!=0)
 		char c=getch();
+		if(c<='Z')
+		{
+			c-='A';
+			c+='a';
+		}
 		switch(c)
 		{
 			case 'a':
