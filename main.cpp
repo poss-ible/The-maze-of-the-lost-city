@@ -108,6 +108,7 @@ void gotoxy(int x,int y)
 }
 void xyc(int x,int y)
 {
+	cout<<"\b•";
 	if(been[x][y])
 	{
 		gotoxy(last.first+1,last.second+1);
