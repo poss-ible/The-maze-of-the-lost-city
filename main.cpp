@@ -20,7 +20,7 @@ map<int,map<int,bool>> a;
 map<int,map<int,bool>> been;
 int ex,ey,maxn=0;
 pair<int,int> last;
-const int X=59,Y=19;
+const int X=29,Y=19;
 void SetFont(int size = 20) {
 	CONSOLE_FONT_INFOEX cfi;
 	cfi.cbSize = sizeof cfi;
@@ -111,133 +111,39 @@ void xyc(int x,int y)
 	cout<<"\b•";
 	if(been[x][y])
 	{
-		gotoxy(last.first+1,last.second+1);
-		cout<<" ";
+		gotoxy(last.first*2+1,last.second+1);
+		cout<<"  ";
 		been[x][y]=0;
 		been[last.first][last.second]=0;
 	}
-	gotoxy(x+1,y+1);
-	cout<<"*";
+	gotoxy(x*2+1,y+1);
+	cout<<" *";
 }
 void print_maze(int x,int y)
 {
-	for(int i=-2;i<=Y+1;++i)
-	{
-		a[-2][i]=1;
-		a[X+1][i]=1;
-	}
-	for(int i=-2;i<=X+1;++i)
-	{
-		a[i][-2]=1;
-		a[i][Y+1]=1;
-	}
 	for(int i=-1;i<=Y;++i)
 	{
 		for(int j=-1;j<=X;++j)
 		{
 			if(i==y&&j==x)
 			{
-				cout<<"S";
+				cout<<"始";
 			}
 			else
 			{
 				if(i==ey&&j==ex)
 				{
-					cout<<"E";
+					cout<<"终";
 				}
 				else
 				{
 					if(a[j][i])
 					{
-						cout<<" ";
+						cout<<"  ";
 					}
 					else
 					{
-						if(a[j-1][i]+a[j+1][i]+a[j][i+1]+a[j][i-1]==0)
-						{
-							cout<<"┼";
-						}
-						else
-						{
-							if(a[j][i+1]+a[j][i-1]+a[j+1][i]==0)
-							{
-								cout<<"├";
-							}
-							else
-							{
-								if(a[j][i+1]+a[j][i-1]+a[j-1][i]==0)
-								{
-									cout<<"┤";
-								}
-								else
-								{
-									if(a[j+1][i]+a[j-1][i]+a[j][i+1]==0)
-									{
-										cout<<"┬";
-									}
-									else
-									{
-										if(a[j+1][i]+a[j-1][i]+a[j][i-1]==0)
-										{
-											cout<<"┴";
-										}
-										else
-										{
-											if(a[j+1][i]+a[j-1][i]==0)
-											{
-												cout<<"─";
-											}
-											else
-											{
-												if(a[j][i+1]+a[j][i-1]==0)
-												{
-													cout<<"│";
-												}
-												else
-												{
-													if(a[j][i+1]+a[j+1][i]==0)
-													{
-														cout<<"┌";
-													}
-													else
-													{
-														if(a[j][i-1]+a[j+1][i]==0)
-														{
-															cout<<"└";
-														}
-														else
-														{
-															if(a[j][i+1]+a[j-1][i]==0)
-															{
-																cout<<"┐";
-															}
-															else
-															{
-																if(a[j][i-1]+a[j-1][i]==0)
-																{
-																	cout<<"┘";
-																}
-																else
-																{
-																	if(a[j][i+1]==0||a[j][i-1]==0)
-																	{
-																		cout<<"│";
-																	}
-																	else
-																	{
-																		cout<<"─";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
+						cout<<"■";
 					}
 				}
 			}
@@ -268,6 +174,7 @@ void move(int x,int y)
 				if(canx(x))
 				{
 					xyc(x,y);
+					cout<<"\b\b";
 				}
 				else
 				{
@@ -282,6 +189,7 @@ void move(int x,int y)
 				if(canx(x))
 				{
 					xyc(x,y);
+					cout<<" ";
 				}
 				else
 				{
