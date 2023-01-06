@@ -245,7 +245,8 @@ void print_maze(int x,int y)
 }
 void move(int x,int y)
 {
-	xyc(0,0);
+	gotoxy(1,1);
+	cout<<'*';
 	while(x!=ex||y!=ey)
 	{
 		#define canx(x) (x>=0&&x<X&&a[x][y]!=0)
