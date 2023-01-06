@@ -17,7 +17,9 @@
 using namespace std;
 
 map<int,map<int,bool>> a;
+map<int,map<int,bool>> been;
 int ex,ey,maxn=0;
+pair<int,int> last;
 const int X=59,Y=19;
 void SetFont(int size = 20) {
 	CONSOLE_FONT_INFOEX cfi;
@@ -27,11 +29,12 @@ void SetFont(int size = 20) {
 	cfi.dwFontSize.Y = size;
 	cfi.FontFamily = FF_DONTCARE;
 	cfi.FontWeight = FW_NORMAL;
-	wcscpy_s(cfi.FaceName, L"等线light");
+	wcscpy_s(cfi.FaceName, L"等线 light");
 	SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
 }
 void chushihua()
 {
+	been[0][0]=1;
 	SetFont();
 	HANDLE HOUT = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD NewSize = GetLargestConsoleWindowSize(HOUT);
@@ -105,6 +108,12 @@ void gotoxy(int x,int y)
 }
 void xyc(int x,int y)
 {
+	if(been[x][y])
+	{
+		gotoxy(last.first+1,last.second+1);
+		cout<<" ";
+		been[x][y]=0;
+	}
 	gotoxy(x+1,y+1);
 	cout<<"*";
 }
@@ -247,6 +256,7 @@ void move(int x,int y)
 			c-='A';
 			c+='a';
 		}
+		bool b=1;
 		switch(c)
 		{
 			case 'a':
@@ -259,6 +269,7 @@ void move(int x,int y)
 				else
 				{
 					++x;
+					b=0;
 				}
 				break;
 			}
@@ -272,6 +283,7 @@ void move(int x,int y)
 				else
 				{
 					--x;
+					b=0;
 				}
 				break;
 			}
@@ -285,6 +297,7 @@ void move(int x,int y)
 				else
 				{
 					++y;
+					b=0;
 				}
 				break;
 			}
@@ -298,9 +311,20 @@ void move(int x,int y)
 				else
 				{
 					--y;
+					b=0;
 				}
 				break;
 			}
+			default:
+			{
+				b=0;
+			}
+		}
+		if(b)
+		{
+			been[x][y]=1;
+			last.first=x;
+			last.second=y;
 		}
 	}
 	gotoxy(0,21);
