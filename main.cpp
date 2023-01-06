@@ -111,12 +111,12 @@ void xyc(int x,int y)
 	cout<<"\b•";
 	if(been[x][y])
 	{
-		gotoxy(last.first*2+1,last.second+1);
+		gotoxy(last.first*2+2,last.second+1);
 		cout<<"  ";
 		been[x][y]=0;
 		been[last.first][last.second]=0;
 	}
-	gotoxy(x*2+1,y+1);
+	gotoxy(x*2+2,y+1);
 	cout<<" *";
 }
 void print_maze(int x,int y)
@@ -153,7 +153,7 @@ void print_maze(int x,int y)
 }
 void move(int x,int y)
 {
-	gotoxy(2,1);
+	gotoxy(3,1);
 	cout<<'*';
 	while(x!=ex||y!=ey)
 	{
