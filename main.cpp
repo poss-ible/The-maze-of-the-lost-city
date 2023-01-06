@@ -113,6 +113,7 @@ void xyc(int x,int y)
 		gotoxy(last.first+1,last.second+1);
 		cout<<" ";
 		been[x][y]=0;
+		been[last.first][last.second]=0;
 	}
 	gotoxy(x+1,y+1);
 	cout<<"*";
