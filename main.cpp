@@ -153,7 +153,7 @@ void print_maze(int x,int y)
 }
 void move(int x,int y)
 {
-	gotoxy(1,1);
+	gotoxy(2,1);
 	cout<<'*';
 	while(x!=ex||y!=ey)
 	{
@@ -174,7 +174,6 @@ void move(int x,int y)
 				if(canx(x))
 				{
 					xyc(x,y);
-					cout<<"\b\b";
 				}
 				else
 				{
@@ -189,7 +188,6 @@ void move(int x,int y)
 				if(canx(x))
 				{
 					xyc(x,y);
-					cout<<" ";
 				}
 				else
 				{
