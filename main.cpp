@@ -35,7 +35,7 @@ void SetFont(int size = 20) {
 void chushihua()
 {
 	been[0][0]=1;
-	SetFont();
+	//SetFont();
 	HANDLE HOUT = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD NewSize = GetLargestConsoleWindowSize(HOUT);
     NewSize.X -= 1;
