@@ -235,7 +235,7 @@ void move(int x,int y)
 			last.second=y;
 		}
 	}
-	gotoxy(0,21);
+	gotoxy(0,Y+2);
 }
 int main()
 {
