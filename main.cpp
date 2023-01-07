@@ -543,7 +543,7 @@ void main_fileon()
 	if (PASSWORD[0] != 'B' || PASSWORD [1] != 'L' || PASSWORD [2] != 'E' || PASSWORD [3] != 'S' || PASSWORD [4] != 'S')
 	{
 		plot ("EN", 61);
-		KillProgram()
+		KillProgram();
 	}
 	
 	else
