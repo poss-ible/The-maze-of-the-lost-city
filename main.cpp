@@ -20,7 +20,6 @@
 using namespace std;
 
 map<int,map<int,bool>> a;
-map<int,map<int,bool>> been;
 int ex,ey,maxn=0;
 pair<int,int> last;
 const int X=29,Y=19;
@@ -40,13 +39,8 @@ int wherey()
     return csbi.dwCursorPosition.Y;
 }
 
-inline bool exists (string name)
+inline bool exists (const string name)
 {
-	string cwd_s;
-	char cwd[256];
-    _getcwd(cwd, 256);
-    cwd_s = cwd;
-    name = name + cwd_s;
 	struct stat buffer;
 	return (stat (name.c_str(), &buffer) == 0); 
 }
@@ -166,7 +160,6 @@ void Clear ()
 
 void chushihua()
 {
-	been[0][0]=1;
 	//SetFont();
 	HANDLE HOUT = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD NewSize = GetLargestConsoleWindowSize(HOUT);
@@ -386,13 +379,6 @@ void plot (string lan, int part)
 void xyc(int x,int y)
 {
 	cout<<"\b\b  ";
-	if(been[x][y])
-	{
-		gotoxy(last.first*2+2,last.second+1);
-		cout<<"  ";
-		been[x][y]=0;
-		been[last.first][last.second]=0;
-	}
 	gotoxy(x*2+2,y+1);
 	cout<<"◆";
 }
@@ -432,7 +418,7 @@ void print_maze(int x,int y)
 void move(int x,int y, int startx, int starty)
 {
 	gotoxy(startx,starty);
-	cout<<"\b\b◆";
+	cout<<"\b◆";
 	while(x!=ex||y!=ey)
 	{
 		#define canx(x) (x>=0&&x<X&&a[x][y]!=0)
@@ -443,7 +429,6 @@ void move(int x,int y, int startx, int starty)
 			c-='A';
 			c+='a';
 		}
-		bool b=1;
 		switch(c)
 		{
 			case 'a':
@@ -456,7 +441,6 @@ void move(int x,int y, int startx, int starty)
 				else
 				{
 					++x;
-					b=0;
 				}
 				break;
 			}
@@ -470,7 +454,6 @@ void move(int x,int y, int startx, int starty)
 				else
 				{
 					--x;
-					b=0;
 				}
 				break;
 			}
@@ -484,7 +467,6 @@ void move(int x,int y, int startx, int starty)
 				else
 				{
 					++y;
-					b=0;
 				}
 				break;
 			}
@@ -498,20 +480,9 @@ void move(int x,int y, int startx, int starty)
 				else
 				{
 					--y;
-					b=0;
 				}
 				break;
 			}
-			default:
-			{
-				b=0;
-			}
-		}
-		if(b)
-		{
-			been[x][y]=1;
-			last.first=x;
-			last.second=y;
 		}
 	}
 	gotoxy(0,Y+2);
@@ -545,6 +516,7 @@ void main_fileon()
 	chushihua();
 	plot ("EN", 1);
 	
+	maxn=0;
 	makemaze(0,0,0);
 	print_maze(0,0);
 	move(0,0,3,1);
@@ -572,6 +544,8 @@ void main_fileon()
 	plot ("EN", 5);
 	
 	system ("cls");
+	
+	maxn=0;
 	makemaze(0,0,0);
 	print_maze(0,0);
 	move(0,0,3,1);
@@ -589,18 +563,13 @@ void main_fileon()
 		plot ("EN", 62);
 	}
 	
+	remove("self.dll");
+	
 	return;
 }
-void start()
-{
-	chushihua();
-	makemaze(0,0,0);
-	print_maze(0,0);
-	move(0,0);
-}
+
 int main ()
 {
-	//调用start开始
 	if (exists ("self.dll"))
 	{
 		main_fileon ();
