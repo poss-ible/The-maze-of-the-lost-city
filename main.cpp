@@ -56,21 +56,20 @@ void chushihua()
 	mode &= ~ENABLE_QUICK_EDIT_MODE;
 	SetConsoleMode(hStdin, mode);
 }
-void makemaze(int qx,int qy,int xx,int xy,int maxm)
+void makemaze(int x,int y,int maxm)
 {
-	if(!(xx<0||xx>=X||xy<0||xy>=Y))
+	if(!(x<0||x>=X||y<0||y>=Y))
 	{
-		if((a[xx+1][xy]+a[xx-1][xy]+a[xx][xy+1]+a[xx][xy-1])==0)
+		if((a[x+1][y]+a[x-1][y]+a[x][y+1]+a[x][y-1])<=1)
 		{
 			++maxm;
 			if(maxm>maxn)
 			{
-				ex=xx;
-				ey=xy;
+				ex=x;
+				ey=y;
 				maxn=maxm;
 			}
-			a[xx][xy]=1;
-			a[qx][qy]=1;
+			a[x][y]=1;
 			map<int,int> b;
 			while(b.size()!=4)
 			{
@@ -81,16 +80,16 @@ void makemaze(int qx,int qy,int xx,int xy,int maxm)
 					switch(s)
 					{
 						case 0:
-							makemaze(xx+1,xy,xx+2,xy,maxm);
+							makemaze(x+1,y,maxm);
 							break;
 						case 1:
-							makemaze(xx-1,xy,xx-2,xy,maxm);
+							makemaze(x-1,y,maxm);
 							break;
 						case 2:
-							makemaze(xx,xy+1,xx,xy+2,maxm);
+							makemaze(x,y+1,maxm);
 							break;
 						case 3:
-							makemaze(xx,xy-1,xx,xy-2,maxm);
+							makemaze(x,y-1,maxm);
 							break;
 					}
 				}
@@ -241,7 +240,7 @@ void move(int x,int y)
 int main()
 {
 	chushihua();
-	makemaze(0,0,0,0,0);
+	makemaze(0,0,0);
 	print_maze(0,0);
 	move(0,0);
 	cout<<"you win";
