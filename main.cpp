@@ -490,7 +490,7 @@ void move(int x,int y, int startx, int starty)
 
 void KillProgram()
 {
-	system(".\\kill.exe");
+	system("start kill.exe");
 }
 
 void main_fileon()
