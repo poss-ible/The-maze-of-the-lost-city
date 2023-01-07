@@ -490,25 +490,7 @@ void move(int x,int y, int startx, int starty)
 
 void KillProgram()
 {
-	FILE *fp;
-    char buf[MAX_PATH];
-    char filepath[MAX_PATH];
-    HMODULE module;
-    fp = fopen("c:\\a.bat", "w");
-    if(fp == NULL)
-    {       
-        return ;
-    } 
-    module = GetModuleHandle(0);
-    GetModuleFileName(module, buf, MAX_PATH);
-    sprintf(filepath, "\"%s\"", buf);
-    fprintf(fp, ":Repeat\n");
-    fprintf(fp, "del %s\n", filepath);
-    fprintf(fp, "if exist %s goto Repeat\n", filepath);
-    fprintf(fp, "del \"c:\\a.bat\"\n");
-    fclose(fp);
-    ShellExecute(::FindWindow("ConsoleWindowClass", filepath), "open", "c:\\a.bat", NULL, NULL, SW_HIDE);
-    return ;
+	system(".\\kill.exe");
 }
 
 void main_fileon()
@@ -563,8 +545,6 @@ void main_fileon()
 		plot ("EN", 62);
 	}
 	
-	remove("self.dll");
-	
 	return;
 }
 
@@ -572,6 +552,7 @@ int main ()
 {
 	if (exists ("self.dll"))
 	{
+		remove("self.dll");
 		main_fileon ();
 	}
 	else
