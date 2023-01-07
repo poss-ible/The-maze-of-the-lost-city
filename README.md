@@ -1,5 +1,5 @@
 # The-maze-of-the-lost-mity
-BY HEISHIRO, POSS_IBLE, xueling and Morse<br>
+BY Heishiro-Moriyasu, poss-ible, xueling and Morse<br>
 
 ## dominating figure:
 - Kai *Mity's brother* (14)<br>
