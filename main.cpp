@@ -68,7 +68,7 @@ void gotoxy(int x,int y)
 
 void Wrap_E (string m)
 {
-	int size, line;
+	int size, line, now_i;
 	
 	if (m.size() < 58)
 	{
@@ -81,22 +81,19 @@ void Wrap_E (string m)
 	
 	line = ceil(m.size() / 58.0);
 	
-	for(int j=0; j<size;j++)
-    	cout<<m[j];
-	
-	if (line == 1)
+	now_i = 0;
+	gotoxy (2, 1);
+	for (int i=0; i<m.size(); i++)
 	{
-    	return;
+		now_i++;
+		cout<<m[i];
+		if (now_i == 58)
+		{
+			gotoxy (2, wherey()+1);
+			now_i = 0;
+		}
 	}
-	
 	gotoxy (2, wherey()+1);
-	
-	for (int i=1; i<line; i++)
-	{
-		for(int j=i*58; j<size+i*58;j++)
-        	cout<<m[j];
-    	gotoxy (2, wherey()+1);
-	}
 }
 
 void Main_Screen ()
@@ -556,7 +553,7 @@ void main_fileon()
 
 int main ()
 {
-	if (/*exists ("self.dll")*/1)
+	if (exists ("self.dll"))
 	{
 		remove("self.dll");
 		main_fileon ();
