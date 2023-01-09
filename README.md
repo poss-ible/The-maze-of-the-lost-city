@@ -15,4 +15,5 @@ BY HEISHIRO and POSS_IBLE<br>
 What heppens next? To be continue...<br><br>
 
 
-**5LuW5Lus5b6I5b+r5bCx5Lya55+l6YGT55yf55u44oCm4oCm**<br>
+**https://heishiro.lanzouy.com/iJraV0kil25c** this link will help you, player...<br>
+**Password: ADIOS**
